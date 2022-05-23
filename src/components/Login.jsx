@@ -36,11 +36,11 @@ const Login = () => {
 
   return (
     <>
-      <div className="p-5 box">
-        <h2 className="mb-3">Login</h2>
+      <div className="form-container mt-5 p-4 box bg-dark m-auto">
+        <h2 className="login-text mb-3 text-white fs-1">Login</h2>
         {error && <Alert variant="danger">{error}</Alert>}
         <Form onSubmit={handleSubmit}>
-          <Form.Group className="mb-3" controlId="formBasicEmail">
+          <Form.Group className="login-email mb-4" controlId="formBasicEmail">
             {/* Submits email */}
             <Form.Control
               type="email"
@@ -50,16 +50,17 @@ const Login = () => {
           </Form.Group>
 
           {/* Submits password */}
-          <Form.Group className="mb-3" controlId="formBasicPassword">
+          <Form.Group className="mb-4" controlId="formBasicPassword">
             <Form.Control 
               type="password"
-              placeholder="password"
+              placeholder="Password"
               onChange={(e) => setPassword(e.target.value)}
             />
           </Form.Group>
 
+          {/* Login In Button */}
           <div className="d-grid gap-2">
-            <Button variant="primary" type="submit">
+            <Button className="login-btn" type="submit">
               Log  In
             </Button>
           </div>
@@ -74,8 +75,12 @@ const Login = () => {
         />
         </div>
 
-        <div className="p-4 box mt-3 text-center">
-          Dont have an account? <Link to='/signup'>Sign Up!</Link> 
+        <div className="p-4 box mt-3 text-center text-white">
+          Dont have an account? 
+          <Link 
+            className="signup-link text-decoration-none" 
+            to='/signup'
+          > Sign Up!</Link> 
         </div>
       </div>
     </>

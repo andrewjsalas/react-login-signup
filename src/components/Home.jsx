@@ -19,11 +19,15 @@ const Home = () => {
   return (
     <>
       <div className='p-4 mt-3 text-center'>
-        Welcome <br/>
-        {user && user.email}
+        <h1 className='display-2 text-white'>Welcome, </h1>
+        <br/>
+        <div className='display-6 text-white'>
+          {user && user.email}
+        </div>
+        
       </div>
-      <div className='d-grid gap-2'>
-        <Button variant='primary' onClick={handleLogout}>
+      <div className='d-grid gap-2 col-6 mx-auto mt-5'>
+        <Button className='logout-btn btn-md' variant='primary' onClick={handleLogout}>
           Logout
         </Button>
       </div>
